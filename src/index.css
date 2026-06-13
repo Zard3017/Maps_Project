@@ -4,21 +4,34 @@
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Leaflet map full height */
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .leaflet-container {
   width: 100%;
   height: 100%;
 }
 
-/* Custom marker cluster styles */
 .marker-cluster-small,
 .marker-cluster-medium,
 .marker-cluster-large {
@@ -32,13 +45,11 @@ body {
   font-weight: 600;
 }
 
-/* Custom pin styles */
 .custom-pin {
   background: none !important;
   border: none !important;
 }
 
-/* Side panel transition */
 .detail-panel {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
