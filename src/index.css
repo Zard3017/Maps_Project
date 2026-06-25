@@ -54,3 +54,8 @@ html, body {
 .detail-panel {
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+.leaflet-control-attribution {
+  font-size: 9px !important;
+  opacity: 0.6;
+  background: rgba(255,255,255,0.7) !important;
+}

@@ -33,7 +33,7 @@ export const LOCATIONS = [
 
 ]
 
-export const CATEGORIES = ['all', 'Park', 'Museum', 'Cafe', 'Restaurant', 'Shopping', 'Hotel', 'Attraction']
+export const CATEGORIES = ['all', 'Forest', 'Lake']
 
 export default function useLocations() {
   const { setLocations, searchQuery, activeCategory } = useAppStore()
