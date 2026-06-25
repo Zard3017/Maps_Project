@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Search, SlidersHorizontal, Menu, X, MapPin, Bookmark } from 'lucide-react'
+import { Search, SlidersHorizontal, Menu, X, Bookmark } from 'lucide-react'
 import useAppStore from '../store/useAppStore'
 import { CATEGORIES } from '../hooks/useLocations'
 
@@ -23,10 +23,11 @@ export default function Navbar() {
         <div className="flex items-center gap-3 px-4 h-14">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1.5 shrink-0">
-            <div className="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center">
-              <MapPin size={16} className="text-white" />
-            </div>
-            <span className="font-semibold text-gray-900 text-sm hidden sm:block">Explore</span>
+            <img
+              src="/images/Birdlife-logo.png"
+              alt="BirdLife Africa"
+              className="h-10 w-auto object-contain"
+/>
           </Link>
 
           {/* Search */}
