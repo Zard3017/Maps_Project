@@ -52,7 +52,7 @@ export default function DetailPanel() {
       {/* Image */}
       <div className="relative h-48 shrink-0 bg-gray-100">
         {loc.image ? (
-          <img src={loc.image} alt={loc.name} className="w-full h-full object-cover" />
+          <img src={loc.image} alt={loc.name} className="w-full h-full object-contain" />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-300 text-4xl">🗺️</div>
         )}
