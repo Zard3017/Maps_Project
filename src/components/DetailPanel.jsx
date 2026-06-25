@@ -12,20 +12,7 @@ const CATEGORY_COLORS = {
   default: 'bg-sky-100 text-sky-700',
 }
 
-function StarRating({ rating }) {
-  return (
-    <div className="flex items-center gap-1">
-      {[1, 2, 3, 4, 5].map((i) => (
-        <Star
-          key={i}
-          size={13}
-          className={i <= Math.round(rating) ? 'text-amber-400 fill-amber-400' : 'text-gray-200 fill-gray-200'}
-        />
-      ))}
-      <span className="text-sm font-medium text-gray-900 ml-1">{rating}</span>
-    </div>
-  )
-}
+
 
 export default function DetailPanel() {
   const { selectedLocation, clearSelectedLocation, savedIds, toggleSaved, setMapCenter, setMapZoom } = useAppStore()
@@ -92,10 +79,7 @@ export default function DetailPanel() {
             </button>
           </div>
 
-          <div className="mt-2">
-            <StarRating rating={loc.rating} />
-            <span className="text-xs text-gray-400 mt-0.5 block">({loc.reviews} reviews)</span>
-          </div>
+          
 
           <p className="mt-3 text-sm text-gray-600 leading-relaxed">{loc.description}</p>
 
