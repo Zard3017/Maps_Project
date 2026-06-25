@@ -5,8 +5,8 @@ const useAppStore = create(
   persist(
     (set) => ({
       // Map
-      mapCenter: [-1.2921, 36.8219],
-      mapZoom: 13,
+      mapCenter: [2.0, 20.0],
+      mapZoom: 3,
       setMapCenter: (center) => set({ mapCenter: center }),
       setMapZoom: (zoom) => set({ mapZoom: zoom }),
 
