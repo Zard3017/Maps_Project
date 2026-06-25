@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { Search, SlidersHorizontal, Menu, X, Bookmark } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { Search, SlidersHorizontal, Menu, X, Bookmark, MapPin } from 'lucide-react'
 import useAppStore from '../store/useAppStore'
 import { CATEGORIES } from '../hooks/useLocations'
 
@@ -8,7 +8,6 @@ export default function Navbar() {
   const { searchQuery, setSearchQuery, activeCategory, setActiveCategory, showFilters, toggleFilters } = useAppStore()
   const [menuOpen, setMenuOpen] = useState(false)
   const [localQ, setLocalQ] = useState(searchQuery)
-  const navigate = useNavigate()
   const timer = useRef(null)
 
   const handleSearch = (val) => {
@@ -18,16 +17,17 @@ export default function Navbar() {
   }
 
   return (
-    <>
-      <header className="bg-white border-b border-gray-200 z-50 relative">
+    <div className="relative z-[2000]">
+      <header className="bg-white border-b border-gray-200">
         <div className="flex items-center gap-3 px-4 h-14">
+
           {/* Logo */}
           <Link to="/" className="flex items-center gap-1.5 shrink-0">
             <img
               src="/images/Birdlife-logo.png"
               alt="BirdLife Africa"
               className="h-10 w-auto object-contain"
-/>
+            />
           </Link>
 
           {/* Search */}
@@ -48,7 +48,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Actions */}
+          {/* Filters button */}
           <button
             onClick={toggleFilters}
             className={`flex items-center gap-1.5 px-3 py-2 text-sm rounded-lg border transition-colors ${showFilters ? 'bg-sky-50 border-sky-300 text-sky-700' : 'border-gray-200 text-gray-600 hover:bg-gray-50'}`}
@@ -57,6 +57,7 @@ export default function Navbar() {
             <span className="hidden sm:block">Filters</span>
           </button>
 
+          {/* Menu button */}
           <button onClick={() => setMenuOpen(!menuOpen)}
             className="p-2 text-gray-600 hover:bg-gray-50 rounded-lg border border-gray-200">
             {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -83,7 +84,7 @@ export default function Navbar() {
 
       {/* Dropdown menu */}
       {menuOpen && (
-        <div className="absolute top-14 right-4 bg-white border border-gray-200 rounded-xl shadow-lg z-50 w-48 py-1">
+        <div className="absolute top-full right-4 mt-1 bg-white border border-gray-200 rounded-xl shadow-xl z-[2000] w-48 py-1">
           <Link to="/" onClick={() => setMenuOpen(false)}
             className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50">
             <MapPin size={15} /> Explore map
@@ -94,6 +95,6 @@ export default function Navbar() {
           </Link>
         </div>
       )}
-    </>
+    </div>
   )
 }
