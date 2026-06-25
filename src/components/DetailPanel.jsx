@@ -57,6 +57,11 @@ export default function DetailPanel() {
 
   return (
     <div className="detail-panel w-full h-full bg-white flex flex-col overflow-hidden border-l border-gray-200">
+      {/* Mobile drag handle */}
+      <div className="md:hidden flex justify-center pt-2 pb-1 bg-white">
+        <div className="w-10 h-1 bg-gray-300 rounded-full" />
+      </div>
+
       {/* Image */}
       <div className="relative h-48 shrink-0 bg-gray-100">
         {loc.image ? (
@@ -78,7 +83,6 @@ export default function DetailPanel() {
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto">
         <div className="p-4">
-          {/* Header */}
           <h2 className="text-lg font-semibold text-gray-900 leading-snug">{loc.name}</h2>
           <div className="flex items-center gap-1.5 mt-1 text-sm text-gray-500">
             <MapPin size={13} />
@@ -93,10 +97,8 @@ export default function DetailPanel() {
             <span className="text-xs text-gray-400 mt-0.5 block">({loc.reviews} reviews)</span>
           </div>
 
-          {/* Description */}
           <p className="mt-3 text-sm text-gray-600 leading-relaxed">{loc.description}</p>
 
-          {/* Contact */}
           {(loc.phone || loc.website) && (
             <div className="mt-3 space-y-1">
               {loc.phone && (
@@ -113,7 +115,6 @@ export default function DetailPanel() {
             </div>
           )}
 
-          {/* Highlights */}
           {loc.highlights?.length > 0 && (
             <div className="mt-4">
               <p className="text-xs font-semibold text-gray-700 uppercase tracking-wide mb-2">Highlights</p>
