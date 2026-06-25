@@ -109,8 +109,8 @@ export default function MapView({ satellite, setSatellite }) {
         zoomControl={false}
         maxBounds={[[-36, -18], [38, 52]]}
         maxBoundsViscosity={1.0}
-        minZoom={1}
-        maxZoom={1}
+        minZoom={3}
+        
       >
         <TileLayer url={tileUrl} attribution={tileAttr} />
         <ZoomControl position="topleft" />
