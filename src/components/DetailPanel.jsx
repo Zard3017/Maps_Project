@@ -3,13 +3,9 @@ import useAppStore from '../store/useAppStore'
 
 const CATEGORY_COLORS = {
   Park: 'bg-green-100 text-green-700',
-  Museum: 'bg-purple-100 text-purple-700',
-  Cafe: 'bg-amber-100 text-amber-700',
-  Restaurant: 'bg-red-100 text-red-700',
-  Shopping: 'bg-blue-100 text-blue-700',
-  Hotel: 'bg-cyan-100 text-cyan-700',
-  Attraction: 'bg-fuchsia-100 text-fuchsia-700',
-  default: 'bg-sky-100 text-sky-700',
+  Lake: 'bg-amber-100 text-amber-700',
+  Forest: 'bg-green-100 text-red-700',
+  
 }
 
 
